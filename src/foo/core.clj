@@ -3,10 +3,8 @@
 
 (defn -main
   [& args]
-	(def resp (client/get "http://www.yelp.com"))
-	(def headers (:headers resp))
-	(def server (headers “server”))
-	(println server)
-
-)
+(def resp (client/get "http://www.bbc.com"))
+(def headers (:headers resp))
+(def server (headers "server"))
+(println server))
 
