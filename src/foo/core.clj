@@ -3,10 +3,8 @@
 
 (defn -main
   [& args]
-  (def url (first args))
+  (let [url (first args)
+	resp (client/get url)
+	server (get-in resp [:headers "server"])]
   (println url)
-  (def resp (client/get url))
-  (def headers (:headers resp))
-  (def server (headers "server"))
-  (println server))
-
+  (println server)))
